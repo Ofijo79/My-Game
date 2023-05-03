@@ -1,16 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public bool isGameOver;
     public bool canShoot;
-    public float powerUpDuration = 5;
-    public float powerUpTimer = 0;
+    public float powerUpBullets = 10;
+    public float powerUpScore = 0;
+
+    private int score = 10;
+    public Text bulletText;
 
     // Start is called before the first frame update
+    /* void Start()
+    {
+        score = 0;
+    } */
 
+    public void Addbullets()
+    {
+        score--;
+        bulletText.text = "x" + score;
+    }
 
     // Update is called once per frame
     void Update()
@@ -21,14 +34,14 @@ public class GameManager : MonoBehaviour
     {
         if(canShoot)
         {
-            if(powerUpTimer <= powerUpDuration)
+            if(powerUpScore <= powerUpBullets)
             {
-                powerUpTimer += Time.deltaTime;
+                powerUpScore += Time.deltaTime;
             }
             else
             {
                 canShoot = false;
-                powerUpTimer = 0;
+                powerUpScore = 0;
             }
         }
     }

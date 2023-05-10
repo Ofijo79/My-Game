@@ -1119,8 +1119,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -403, y: 230.4}
-  m_SizeDelta: {x: 175.7217, y: 37.7687}
+  m_AnchoredPosition: {x: -725, y: 451.99997}
+  m_SizeDelta: {x: 182.02, y: 64.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216425716
 MonoBehaviour:
@@ -1143,13 +1143,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: fb123a0afd26bb44da12506fda556a12, type: 3}
+    m_FontSize: 44
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 90
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2170,7 +2170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36, y: -1.07, z: -10}
+  m_LocalPosition: {x: -0.36, y: -1.12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2190,7 +2190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: -10}
-  limitX: {x: 63.2, y: 0.02229606}
+  limitX: {x: 47.03, y: 1.35}
   limitY: {x: 24.2, y: 0.02229606}
   interpolationRatio: 0.1
 --- !u!1 &543580199
@@ -2687,8 +2687,7 @@ MonoBehaviour:
   isGameOver: 0
   canShoot: 0
   powerUpBullets: 10
-  powerUpScore: 0
-  bulletText: {fileID: 0}
+  bulletText: {fileID: 216425716}
 --- !u!1 &646149919
 GameObject:
   m_ObjectHideFlags: 0
@@ -4189,7 +4188,7 @@ RectTransform:
   m_GameObject: {fileID: 931627571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.3965, y: 2.3965, z: 2.3965}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 891833652}
@@ -4197,7 +4196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -517, y: 230.4}
+  m_AnchoredPosition: {x: -870, y: 452}
   m_SizeDelta: {x: 28.5846, y: 28.5846}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &931627573
@@ -5246,7 +5245,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1224843482}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4e74f97999c858844b6b65a6482ee794, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

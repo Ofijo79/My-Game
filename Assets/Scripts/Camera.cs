@@ -12,33 +12,36 @@ public class Camera : MonoBehaviour
 
     public float interpolationRatio; 
 
-    // GameManager gameManager;
+    GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.Find("Character").GetComponent<Transform>(); 
-        // gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();     
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();     
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-       transform.position = target.position + offset;
-        // posicion deseada de la camara
-        Vector3 desiredPosition = target.position + offset;
+        if(target != null && gameManager.isGameOver == false)
+        {
+            transform.position = target.position + offset;
+            // posicion deseada de la camara
+            Vector3 desiredPosition = target.position + offset;
 
-        // limitamos en la posicion x
-        float clampX = Mathf.Clamp(desiredPosition.x, limitX.x, limitX.y);
+            // limitamos en la posicion x
+            float clampX = Mathf.Clamp(desiredPosition.x, limitX.x, limitX.y);
 
-        // limitamos en la posicion y
-        float clampY = Mathf.Clamp(desiredPosition.y, limitY.x, limitY.y);
+            // limitamos en la posicion y
+            float clampY = Mathf.Clamp(desiredPosition.y, limitY.x, limitY.y);
 
-        // posicion limitada en X e Y
-        Vector3 clampedPosition = new Vector3(clampX, clampY, desiredPosition.z);
+            // posicion limitada en X e Y
+            Vector3 clampedPosition = new Vector3(clampX, clampY, desiredPosition.z);
 
-        Vector3 lerpedPosition = Vector3.Lerp(transform.position, clampedPosition, interpolationRatio);
+            Vector3 lerpedPosition = Vector3.Lerp(transform.position, clampedPosition, interpolationRatio);
         
-        transform.position = lerpedPosition;
+            transform.position = lerpedPosition;
+        }
     }
 }

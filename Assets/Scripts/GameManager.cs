@@ -7,10 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public bool isGameOver;
     public bool canShoot;
-    public float powerUpBullets = 10;
-    public float powerUpScore = 0;
+    public int powerUpBullets;
+    //public float powerUpScore = 0;
 
-    private int score = 10;
+    //private int score = 10;
     public Text bulletText;
 
     // Start is called before the first frame update
@@ -19,22 +19,44 @@ public class GameManager : MonoBehaviour
         score = 0;
     } */
 
-    public void Addbullets()
+    public void Start() 
     {
-        score--;
-        bulletText.text = "x" + score;
+        powerUpBullets = 0;
+        bulletText.text = "x" + powerUpBullets;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GameOver()
     {
-        ShootPowerUp();
+        isGameOver = true;
+
+        // LoadScene();
+
+        //Invoke("LoadScene", 2.5f);
+
+        // empezar corutina
+        StartCoroutine("LoadScene");
     }
-    void ShootPowerUp()
+    
+    
+    public void Reload()
     {
-        if(canShoot)
+        powerUpBullets += 10;
+        bulletText.text = "x" + powerUpBullets;
+    }
+
+    public void Shoot()
+    {
+        powerUpBullets --;
+        bulletText.text = "x" + powerUpBullets;
+    }
+
+    
+
+    public void ShootPowerUp()
+    {
+        if(powerUpBullets > 0)
         {
-            if(powerUpScore <= powerUpBullets)
+            /*if(powerUpScore <= powerUpBullets)
             {
                 powerUpScore += Time.deltaTime;
             }
@@ -42,7 +64,9 @@ public class GameManager : MonoBehaviour
             {
                 canShoot = false;
                 powerUpScore = 0;
-            }
+            }*/
+
+            Shoot();
         }
     }
 }

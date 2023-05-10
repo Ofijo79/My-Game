@@ -65,9 +65,10 @@ public class Character : MonoBehaviour
                 rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 anim.SetBool("IsJumping", true);
             }
-            if(Input.GetKeyDown(KeyCode.F) && gameManager.canShoot)
+            if(Input.GetKeyDown(KeyCode.F) && gameManager.powerUpBullets > 0)
             {
                 Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+                gameManager.ShootPowerUp();
             } 
         }
     }
@@ -82,7 +83,7 @@ public class Character : MonoBehaviour
     {
         if(collision.gameObject.tag == "PowerUP")
         {
-            gameManager.canShoot = true;
+            gameManager.Reload();
             Destroy(collision.gameObject);
             sfxManager.GetGun();
         }

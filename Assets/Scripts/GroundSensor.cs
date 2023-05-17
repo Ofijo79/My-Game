@@ -20,6 +20,7 @@ public class GroundSensor : MonoBehaviour
             isGrounded = true;
             controller.anim.SetBool("IsJumping", false);
         }
+    }
 
     void OnTriggerStay2D(Collider2D other) 
     {
@@ -39,4 +40,4 @@ public class GroundSensor : MonoBehaviour
         }
     }
 }
-}
+
